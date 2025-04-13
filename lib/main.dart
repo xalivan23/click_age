@@ -1,3 +1,5 @@
+import 'package:click_age/screens/GameScreen.dart';
+import 'package:click_age/screens/HomeScreen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,12 +13,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Click Age',
       debugShowCheckedModeBanner: false, //delete debag
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       ),
-      home: const MyHomePage(title: 'CLICK AGE'),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const HomeScreen(),
+        '/game': (context) => const GameScreen(),
+      },
+      // home: const MyHomePage(title: 'CLICK AGE'),
     );
   }
 }
