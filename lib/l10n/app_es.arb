@@ -1,5 +1,14 @@
 {
   "title": "Edad del Click",
   "continue": "Continuar",
-  "uploadPhoto": "Subir foto"
+  "uploadPhoto": "Subir foto",
+  "loadImage": "Subir imagen",
+  "life": "Vida",
+  "armor": "Armadura",
+  "strength": "Fuerza",
+  "food": "Comida",
+  "feeding": "Alimentación",
+  "sleep": "Sueño",
+  "training": "Entrenamiento",
+  "hunting": "Caza"
 }

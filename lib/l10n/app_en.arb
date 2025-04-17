@@ -2,5 +2,14 @@
   "@@locale": "en",
   "title": "Click Age",
   "chooseTotem": "Choose your totem",
-  "continueToGame": "Continue to Game"
+  "continueToGame": "Continue to Game",
+  "loadImage": "Upload image",
+  "life": "Life",
+  "armor": "Armor",
+  "strength": "Strength",
+  "food": "Food",
+  "feeding": "Feeding",
+  "sleep": "Sleep",
+  "training": "Training",
+  "hunting": "Hunting"
 }

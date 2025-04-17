@@ -6,7 +6,6 @@ import 'package:path/path.dart' as path;
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
 
@@ -52,7 +51,9 @@ class _HomeScreenState extends State<HomeScreen> {
 
       final directory = await getApplicationDocumentsDirectory();
       final fileName = path.basename(picked.path);
-      final savedImage = await File(picked.path).copy('${directory.path}/$fileName');
+      final savedImage = await File(
+        picked.path,
+      ).copy('${directory.path}/$fileName');
 
       // Зберігаємо новий шлях
       await prefs.setString(_prefsKey, savedImage.path);
@@ -66,32 +67,38 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Обери свій тотем')),
+      appBar: AppBar(title: Text(AppLocalizations.of(context)!.chooseTotem)),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             CircleAvatar(
               radius: 80,
-              backgroundImage: _selectedImage != null
-                  ? FileImage(_selectedImage!)
-                  : const AssetImage('assets/images/my_image_1.jpg') as ImageProvider,
+              backgroundImage:
+                  _selectedImage != null
+                      ? FileImage(_selectedImage!)
+                      : const AssetImage('assets/images/my_image_1.jpg')
+                          as ImageProvider,
             ),
             const SizedBox(height: 30),
 
             ElevatedButton.icon(
               onPressed: _pickAndSaveImage,
               icon: const Icon(Icons.photo),
-              label: const Text('Завантажити зображення'),
+              label:  Text(AppLocalizations.of(context)!.loadImage),
             ),
 
             const SizedBox(height: 40),
 
             ElevatedButton(
               onPressed: () {
-                Navigator.pushNamed(context, '/game', arguments: _selectedImage?.path);
+                Navigator.pushNamed(
+                  context,
+                  '/game',
+                  arguments: _selectedImage?.path,
+                );
               },
-              child:  Text(AppLocalizations.of(context)!.continueToGame),
+              child: Text(AppLocalizations.of(context)!.continueToGame),
             ),
           ],
         ),

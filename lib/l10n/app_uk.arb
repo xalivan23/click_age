@@ -2,5 +2,14 @@
   "@@locale": "uk",
   "title": "Клік Епоха",
   "chooseTotem": "Обери свій тотем",
-  "continueToGame": "Перейти до гри"
+  "continueToGame": "Перейти до гри",
+  "loadImage": "Завантажити зображення",
+  "life": "Життя",
+  "armor": "Броня",
+  "strength": "Сила",
+  "food": "Їжа",
+  "feeding": "Харчування",
+  "sleep": "Сон",
+  "training": "Тренування",
+  "hunting": "Полювання"
 }
